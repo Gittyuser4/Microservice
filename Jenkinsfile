@@ -8,7 +8,7 @@ pipeline {
                     withDockerRegistry([credentialsId: 'docker-cred', url: '']) {
 
                         
-                            sh "docker build -t prabhlasubbu99/loadgenerator:latest ."
+                            sh "docker build -t prabhalasubbu99/loadgenerator:latest ."
                         
 
                         sh "docker push prabhalasubbu99/loadgenerator:latest"
