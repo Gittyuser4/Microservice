@@ -2,21 +2,16 @@ pipeline {
     agent any
 
     stages {
-        stage('Build & Tag Docker Image') {
+        stage('Build & Push Docker Image') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                        sh "docker build -t adijaiswal/loadgenerator:latest ."
-                    }
-                }
-            }
-        }
-        
-        stage('Push Docker Image') {
-            steps {
-                script {
-                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                        sh "docker push adijaiswal/loadgenerator:latest"
+                    withDockerRegistry([credentialsId: 'docker-cred', url: '']) {
+
+                        
+                            sh "docker build -t prabhlasubbu99/loadgenerator:latest ."
+                        
+
+                        sh "docker push prabhalasubbu99/loadgenerator:latest"
                     }
                 }
             }
