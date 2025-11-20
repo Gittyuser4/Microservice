@@ -10,10 +10,10 @@ pipeline {
                     withDockerRegistry([credentialsId: 'docker-cred', url: '']) {
 
                         dir('src') {
-                            sh "docker build -t adijaiswal/cartservice:latest ."
+                            sh "docker build -t prabhalasubbu99/cartservice:latest ."
                         }
 
-                        sh "docker push adijaiswal/cartservice:latest"
+                        sh "docker push prabhalasubbu99/cartservice:latest"
                     }
                 }
             }
