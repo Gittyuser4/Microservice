@@ -8,12 +8,8 @@ pipeline {
                 script {
 
                     withDockerRegistry([credentialsId: 'docker-cred', url: '']) {
-
-                        dir('src') {
                             sh "docker build -t prabhalasubbu99/currencyservice:latest ."
-                        }
-
-                        sh "docker push prabhalasubbu99/currencyservice:latest"
+                            sh "docker push prabhalasubbu99/currencyservice:latest"
                     }
                 }
             }
