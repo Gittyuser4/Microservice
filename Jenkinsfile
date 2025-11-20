@@ -5,7 +5,7 @@ pipeline {
         stage('Build & Push Docker Image') {
             steps {
                 script {
-                    withDockerRegistry([credentialsId: 'docker-cred', url: 'https://index.docker.io/v1/']) {
+                    withDockerRegistry([credentialsId: 'docker-cred', url: '']) {
 
                         dir('src') {
                             sh "docker build -t prabhalasubbu99/checkoutservice:latest ."
